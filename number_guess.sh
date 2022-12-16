@@ -38,13 +38,13 @@ GAME() {
 }
 
 ASK_NUMBER() {
-  ((TRIES++))
   read NUMBER_INPUT
   if ! [[ $NUMBER_INPUT =~ ^[0-9]+$ ]]; then
     echo -e "\nThat is not an integer, guess again:"
     ASK_NUMBER
   fi
 
+  ((TRIES++))
   if [ $SECRET_NUMBER -lt $NUMBER_INPUT ]; then
     echo -e "\nIt's lower than that, guess again:"
     ASK_NUMBER
